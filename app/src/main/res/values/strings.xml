@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NASA Gallery</string>
+    <string name="sample_date">2020/2/7</string>
+    <string name="test_text">test text</string>
+</resources>

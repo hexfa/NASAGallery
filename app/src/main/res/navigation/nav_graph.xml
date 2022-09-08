@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nasaItemsFragment">
+
+
+    <fragment
+        android:id="@+id/nasaItemsFragment"
+        android:name="com.nasagallery.view.fragment.NasaItemsFragment"
+        android:label="fragment_nasa_items"
+        tools:layout="@layout/fragment_nasa_items" >
+        <action
+            android:id="@+id/action_nasaItemsFragment_to_nasaItemDetailsFragment"
+            app:destination="@id/nasaItemDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nasaItemDetailsFragment"
+        android:name="com.nasagallery.view.fragment.NasaItemDetailsFragment"
+        android:label="NasaItemDetailsFragment" />
+</navigation>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#fffbff</color>
+    <color name="progress">#674fa3</color>
+    <color name="item_background">#f4f4ff</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="separatorGrey">#e1e1e1</color>
+    <color name="textSecondary">#131212</color>
+    <color name="loading_background">#61000000</color>
+    <color name="gray">#646476</color>
+
+    <color name="primaryColor">#674fa3</color>
+
+    <color name="primaryLightColor">#977cd5</color>
+
+    <color name="primaryDarkColor">#382674</color>
+
+    <color name="primaryTextColor">#ffffff</color>
+</resources>

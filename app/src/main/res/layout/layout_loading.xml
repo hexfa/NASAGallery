@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/loading_background"
+        android:clickable="true"
+        android:elevation="3dp"
+        android:focusable="true">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/layout_loading_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/loading_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:backgroundTint="@color/black"
+            android:elevation="64dp"
+            android:indeterminateTint="@color/progress"
+            app:layout_constraintBottom_toBottomOf="@+id/layout_loading_background"
+            app:layout_constraintEnd_toEndOf="@+id/layout_loading_background"
+            app:layout_constraintStart_toStartOf="@+id/layout_loading_background"
+            app:layout_constraintTop_toTopOf="@+id/layout_loading_background" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
