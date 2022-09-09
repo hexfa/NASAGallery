@@ -30,17 +30,18 @@ https://github.com/hexfa/NASAGallery.git
 ## Configuration
     
 - ### Dokka
-  _I recommend Html document type_
+  - _I recommend Html document type_
+  - _You have to use the JAVA JDK 18 and set it in your JAVA_HOME environment. after putting it in the system needs a restart_
 
-  - ###### Dokka terminal commands
-    | Type | Syntax |
-    | ------ | ------ |
-    | Html | ./gradlew.bat dokkaHtml |
-    | Java doc | ./gradlew.bat dokkaJavadoc |
-    | Gfm | ./gradlew.bat dokkaGfm |
+    - ###### Dokka terminal commands
+      | Type | Syntax |
+      | ------ | ------ |
+      | Html | ./gradlew.bat dokkaHtml |
+      | Java doc | ./gradlew.bat dokkaJavadoc |
+      | Gfm | ./gradlew.bat dokkaGfm |
 
-  - ###### Output Location
-    `app -> build -> dokka`
+    - ###### Output Location
+      `app -> build -> dokka`
 
 ### Keystore
 - Location of the keystore is in **root** directory(**nasa.jks**).
