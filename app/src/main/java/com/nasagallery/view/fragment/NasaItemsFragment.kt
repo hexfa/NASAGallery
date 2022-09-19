@@ -32,7 +32,7 @@ class NasaItemsFragment : Fragment(), NasaItemCallBack {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        nasaItemAdapter = NasaItemAdapter(this)
+        nasaItemAdapter = NasaItemAdapter(this,requireActivity())
 
     }
 
@@ -83,7 +83,7 @@ class NasaItemsFragment : Fragment(), NasaItemCallBack {
     override fun goToDetailPage(title: String) {
         for (item in nasaItemList!!) {
             if (title == item.title) {
-                nasaViewModel.photoItem.value = item
+                nasaViewModel.mediaItem.value = item
                 findNavController().navigate(R.id.nasaItemDetailsFragment)
                 break
             }
