@@ -1,8 +1,10 @@
 package com.nasagallery.view.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
@@ -11,7 +13,7 @@ import com.nasagallery.R
 import com.nasagallery.databinding.NasaItemBinding
 import com.nasagallery.model.local.NASAPhotoItem
 
-internal class NasaItemAdapter(val listener: NasaItemCallBack) :
+internal class NasaItemAdapter(val listener: NasaItemCallBack,val context: Context) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val nasaItemList: MutableList<NASAPhotoItem> = ArrayList()
     private lateinit var mContext: Context
@@ -50,14 +52,15 @@ internal class NasaItemAdapter(val listener: NasaItemCallBack) :
         fun onBind(nasaItem: NASAPhotoItem) {
             val holderNasaItemBinding = dataBinding as NasaItemBinding
             holderNasaItemBinding.txtViewDate.text = nasaItem.date
+            if (nasaItem.media_type=="video"){
+                dataBinding.imgViewPhotoNasa.setImageDrawable(ContextCompat.getDrawable(context,R.drawable.ic_baseline_slow_motion_video_24))
+            }else
             Glide.with(mContext).load(nasaItem.url).into(holderNasaItemBinding.imgViewPhotoNasa)
             holderNasaItemBinding.txtViewTitle.text = nasaItem.title
-            holderNasaItemBinding.imgBtnArrowRight.setOnClickListener {
-
+            holderNasaItemBinding.root.setOnClickListener {
                 listener.goToDetailPage(nasaItem.title)
             }
-
-
+            
         }
     }
 }
