@@ -34,12 +34,42 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/img_view_photo_nasa_detail"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="275dp"
             android:scaleType="fitXY"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/app_bar"
             tools:src="@tools:sample/avatars" />
+
+        <WebView
+            android:id="@+id/video_view"
+            android:name="com.google.android.youtube.player.YouTubePlayerFragment"
+            android:layout_width="match_parent"
+            android:layout_height="275dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_bar"
+            app:layout_constraintBottom_toTopOf="@id/txt_view_title_detail"
+            />
+<!--
+
+            <com.google.android.youtube.player.YouTubePlayerView
+                android:id="@+id/video_view"
+                android:layout_width="match_parent"
+                android:layout_height="275dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/app_bar"
+                app:layout_constraintBottom_toTopOf="@id/txt_view_title_detail">
+
+
+            </com.google.android.youtube.player.YouTubePlayerView>
+
+
+-->
 
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -49,8 +79,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
-            android:text="@string/test_text"
             android:layout_marginEnd="32dp"
+            android:text="@string/test_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_view_photo_nasa_detail" />
@@ -92,13 +122,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:gravity="end"
-            android:paddingEnd="8dp"
-            android:textColor="@color/white"
-            android:paddingStart="8dp"
-            android:text="@string/test_text"
             android:background="@color/gray"
-            app:layout_constraintBottom_toBottomOf="@+id/img_view_photo_nasa_detail"
+            android:gravity="end"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/test_text"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="@+id/img_view_photo_nasa_detail"
             app:layout_constraintEnd_toEndOf="@+id/img_view_photo_nasa_detail" />
 
 
