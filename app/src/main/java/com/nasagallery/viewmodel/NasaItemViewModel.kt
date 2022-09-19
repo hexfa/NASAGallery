@@ -21,7 +21,7 @@ class NasaItemViewModel @Inject constructor(private val photoRepository: PhotoRe
 
 
     private var _photoItemList: MutableLiveData<NASAPhotos> = MutableLiveData()
-    var photoItem: MutableLiveData<NASAPhotoItem> = MutableLiveData()
+    var mediaItem: MutableLiveData<NASAPhotoItem> = MutableLiveData()
 
 
     fun getPhoto(): LiveData<NASAPhotos> {
