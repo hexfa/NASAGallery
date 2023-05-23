@@ -1,5 +1,5 @@
 # NASAGallery
-## [![N|Solid][logo]][engage] _Engage Craft App Gallery_
+## [![N|Solid][logo]][engage] _Nasa App Gallery_
 -----------------------------
 * - * - *  * - * - * 
 -----------------------------
@@ -85,8 +85,8 @@ https://github.com/hexfa/NASAGallery.git
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen.)
 
-   [logo]: <https://hexfa.com/my-git-doc/nasa/images/logo.png> 
-   [engage]: <https://engagecraft.com>
+   [logo]: <https://upload.wikimedia.org/wikipedia/commons/5/57/Iconoir_github-outline.svg> 
+   [hexfa]: <https://github.com/hexfa>
    [link]: <https://hexfa.com/my-git-doc/nasa/apk/nasa.apk>
    [dokka]: <#dokka>
    [doc]: <https://hexfa.com/my-git-doc/nasa/doc>
