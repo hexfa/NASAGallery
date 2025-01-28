@@ -1,5 +1,6 @@
 package com.nasagallery.view.theme
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
@@ -22,16 +23,17 @@ private val DarkColorScheme = darkColorScheme(
     surface = Color.Black,
 )
 
+
 @Composable
 fun NASAGalleryTheme(
-    useDarkTheme: Boolean = false, // Control theme dynamically
+    useDarkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
     val colors = if (useDarkTheme) DarkColorScheme else LightColorScheme
 
     MaterialTheme(
         colorScheme = colors,
-        typography = CustomTypography, // Use Material 3's default typography
+        typography = CustomTypography,
         content = content
     )
 }

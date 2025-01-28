@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 @ActivityRetainedScoped
 class PhotoRepository @Inject constructor(private val apiService: ApiService) {
-    fun getPhoto(id: String): Flow<NASAPhotos> = flow {
+    fun getPhoto(): Flow<NASAPhotos> = flow {
         emit(apiService.getPhoto()) // Make the API call and emit the result
     }
 }
