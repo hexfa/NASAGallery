@@ -1,5 +1,7 @@
 package com.nasagallery.di
 
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.nasagallery.model.remote.ApiService
 import com.nasagallery.model.remote.BASE_URL
 import dagger.Module
@@ -8,7 +10,6 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
@@ -16,6 +17,11 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
+
+
+    @Provides
+    @Singleton
+    fun provideGson(): Gson = GsonBuilder().create()
 
     @Singleton
     @Provides
@@ -35,13 +41,14 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideRetrofit(
+        gson: Gson,
         okHttpClient: OkHttpClient,
         gsonConverterFactory: GsonConverterFactory,
     ): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(okHttpClient)
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .addConverterFactory(gsonConverterFactory)
             .build()
     }
