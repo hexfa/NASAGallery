@@ -1,22 +1,16 @@
+
 buildscript {
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.2'
-        classpath "org.jetbrains.dokka:dokka-gradle-plugin:1.7.10"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10"
-        classpath "com.google.dagger:hilt-android-gradle-plugin:2.43.1"
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.5.2"
-        classpath "org.jetbrains.dokka:dokka-gradle-plugin:1.7.10"
-    }
-}
+        classpath "com.android.tools.build:gradle:8.1.0" // Android Gradle Plugin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.10" // Kotlin Plugin
+        classpath "com.google.dagger:hilt-android-gradle-plugin:2.50" // Hilt Plugin
+        classpath "org.jetbrains.dokka:dokka-gradle-plugin:1.9.0"
 
-plugins {
-    id 'com.android.application' version '7.2.1' apply false
-    id 'com.android.library' version '7.2.1' apply false
-    id 'org.jetbrains.kotlin.android' version '1.7.10' apply false
+    }
 }
 
 task clean(type: Delete) {
