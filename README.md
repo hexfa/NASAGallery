@@ -72,15 +72,13 @@ https://github.com/hexfa/NASAGallery.git
   </table>
 
 ## \\|/ `Technologies` \\|/
-- Data Binding
+- Jetoack Compose
 - Retrofit
-- RX2
+- Flow & Coroutines
 - Hilt
 - Navigation Component
-- Live Data
 - Glide
 - Dokka
-- Web view
 
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen.)
