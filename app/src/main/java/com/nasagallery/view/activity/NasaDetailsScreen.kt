@@ -29,7 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
-import com.nasagallery.model.local.NASAPhotoItem
+import com.nasagallery.data.model.NASAPhotoItem
 
 @Composable
 fun NasaDetailsScreen(

@@ -44,7 +44,7 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.google.gson.Gson
 import com.nasagallery.R
-import com.nasagallery.model.local.NASAPhotoItem
+import com.nasagallery.data.model.NASAPhotoItem
 import com.nasagallery.viewmodel.GalleryViewModel
 
 

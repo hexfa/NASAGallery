@@ -1,7 +1,8 @@
 package com.nasagallery.viewmodel
 
-import com.nasagallery.model.local.NASAPhotos
-import com.nasagallery.model.repository.PhotoRepository
+import com.nasagallery.data.model.NASAPhotos
+import com.nasagallery.data.repository.NasaGalleryRepositoryImpl
+import com.nasagallery.domain.usecase.NasaGalleryUseCase
 import com.nasagallery.view.theme.ThemePreferenceManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.cancel
@@ -13,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class GalleryViewModel @Inject constructor(
-    private val photoRepository: PhotoRepository,
+    private val nasaGalleryUseCase: NasaGalleryUseCase,
     private val preferenceManager: ThemePreferenceManager
 ) :
     BaseViewModel() {
@@ -46,19 +47,14 @@ class GalleryViewModel @Inject constructor(
 
     fun fetchPhoto() {
         viewModelScope.launch {
-            photoRepository.getPhoto().collect { nasaPhotoes ->
-                try {
-                    _photo.value = nasaPhotoes
-                } catch (e: retrofit2.HttpException) {
-                    if (e.code() == 429) {
-                        _error.emit("Too many requests. Please try again later.")
-                    } else {
-                        _error.emit("An unexpected error occurred: ${e.message}")
-                    }
-                } catch (e: Exception) {
-                    _error.emit("An error occurred: ${e.message}")
-                }
+            val result = nasaGalleryUseCase()
+            try {
+                _photo.value = result
+            } catch (e: Exception) {
+                _error.emit("An error occurred: ${e.message}")
+                e.printStackTrace()
             }
+
         }
     }
 
