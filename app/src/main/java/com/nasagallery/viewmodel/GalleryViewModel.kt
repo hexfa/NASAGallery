@@ -1,7 +1,6 @@
 package com.nasagallery.viewmodel
 
 import com.nasagallery.data.model.NASAPhotos
-import com.nasagallery.data.repository.NasaGalleryRepositoryImpl
 import com.nasagallery.domain.usecase.NasaGalleryUseCase
 import com.nasagallery.view.theme.ThemePreferenceManager
 import dagger.hilt.android.lifecycle.HiltViewModel
