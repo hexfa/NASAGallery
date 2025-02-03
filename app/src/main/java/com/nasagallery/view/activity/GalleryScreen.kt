@@ -17,7 +17,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowForward
+import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -44,7 +44,7 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.google.gson.Gson
 import com.nasagallery.R
-import com.nasagallery.model.local.NASAPhotoItem
+import com.nasagallery.data.model.NASAPhotoItem
 import com.nasagallery.viewmodel.GalleryViewModel
 
 
@@ -160,7 +160,7 @@ fun NasaItemCard(
 
             // Right Arrow
             Icon(
-                imageVector = Icons.Default.ArrowForward,
+                imageVector = Icons.AutoMirrored.Filled.ArrowForward,
                 contentDescription = "Arrow Forward",
                 modifier = Modifier
                     .size(24.dp),

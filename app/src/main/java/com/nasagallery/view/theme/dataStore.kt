@@ -13,15 +13,15 @@ val Context.dataStore by preferencesDataStore(name = "theme_preferences")
 
 class ThemePreferenceManager(context: Context) {
     private val dataStore = context.dataStore
-    private val DARK_THEME_KEY = booleanPreferencesKey("dark_theme")
+    private val darkThemeKey = booleanPreferencesKey("dark_theme")
 
     val isDarkTheme: Flow<Boolean> = dataStore.data.map { preferences ->
-        preferences[DARK_THEME_KEY] ?: false // Default is light theme
+        preferences[darkThemeKey] ?: false // Default is light theme
     }
 
     suspend fun setDarkTheme(isDark: Boolean) {
         dataStore.edit { preferences ->
-            preferences[DARK_THEME_KEY] = isDark
+            preferences[darkThemeKey] = isDark
         }
     }
 }

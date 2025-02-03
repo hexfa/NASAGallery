@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -29,7 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
-import com.nasagallery.model.local.NASAPhotoItem
+import com.nasagallery.data.model.NASAPhotoItem
 
 @Composable
 fun NasaDetailsScreen(
@@ -43,8 +43,12 @@ fun NasaDetailsScreen(
     val scrollOffset = remember { derivedStateOf { scrollState.firstVisibleItemScrollOffset.toFloat() } }
 
     // Smoothly animate the alpha and translationY (fade and slide effect)
-    val imageAlpha by animateFloatAsState(targetValue = (1 - (scrollOffset.value / 300)).coerceIn(0f, 1f))
-    val imageTranslationY by animateFloatAsState(targetValue = (-scrollOffset.value / 2).coerceIn(-150f, 0f))
+    val imageAlpha by animateFloatAsState(targetValue = (1 - (scrollOffset.value / 300)).coerceIn(0f, 1f),
+        label = "image alpha"
+    )
+    val imageTranslationY by animateFloatAsState(targetValue = (-scrollOffset.value / 2).coerceIn(-150f, 0f),
+        label = "image translation"
+    )
 
     Scaffold(
         topBar = {
@@ -140,7 +144,7 @@ fun NasaToolbar(
         navigationIcon = {
             IconButton(onClick = onBackClick) {
                 Icon(
-                    imageVector = Icons.Default.ArrowBack,
+                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                     contentDescription = "Back"
                 )
             }

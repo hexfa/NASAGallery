@@ -2,8 +2,8 @@ package com.nasagallery.di
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.nasagallery.model.remote.ApiService
-import com.nasagallery.model.remote.BASE_URL
+import com.nasagallery.data.remote.BASE_URL
+import com.nasagallery.data.remote.NasaApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -55,6 +55,6 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideCurrencyService(retrofit: Retrofit): ApiService =
-        retrofit.create(ApiService::class.java)
+    fun provideCurrencyService(retrofit: Retrofit): NasaApiService =
+        retrofit.create(NasaApiService::class.java)
 }

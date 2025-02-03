@@ -1,6 +1,9 @@
 package com.nasagallery.di
 
 import android.content.Context
+import com.nasagallery.data.remote.NasaApiService
+import com.nasagallery.data.repository.NasaGalleryRepositoryImpl
+import com.nasagallery.domain.repository.NasaGalleryRepository
 import com.nasagallery.view.theme.ThemePreferenceManager
 import dagger.Module
 import dagger.Provides
@@ -11,7 +14,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object ThemeModule {
+object LocalModule {
 
     @Provides
     @Singleton
@@ -19,5 +22,14 @@ object ThemeModule {
         @ApplicationContext context: Context
     ): ThemePreferenceManager {
         return ThemePreferenceManager(context)
+    }
+
+
+    @Provides
+    @Singleton
+    fun provideAccountingRepository(
+        nasaService: NasaApiService
+    ): NasaGalleryRepository {
+        return NasaGalleryRepositoryImpl(nasaService)
     }
 }

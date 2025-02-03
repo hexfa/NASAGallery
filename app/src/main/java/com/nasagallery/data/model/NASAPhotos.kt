@@ -1,3 +1,3 @@
-package com.nasagallery.model.local
+package com.nasagallery.data.model
 
 class NASAPhotos : ArrayList<NASAPhotoItem>()

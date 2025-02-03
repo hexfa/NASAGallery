@@ -13,7 +13,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.google.gson.Gson
-import com.nasagallery.model.local.NASAPhotoItem
+import com.nasagallery.data.model.NASAPhotoItem
 import com.nasagallery.view.theme.NASAGalleryTheme
 import com.nasagallery.viewmodel.GalleryViewModel
 import dagger.hilt.android.AndroidEntryPoint
