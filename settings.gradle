@@ -1,16 +1,20 @@
 pluginManagement {
     repositories {
-        gradlePluginPortal()
         google()
         mavenCentral()
+        gradlePluginPortal()
+        maven { url 'https://jitpack.io' } // Add JitPack
     }
 }
+
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS) // Ensure no repositories in build.gradle
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' } // Add JitPack
     }
 }
+
 rootProject.name = "NASA Gallery"
 include ':app'
